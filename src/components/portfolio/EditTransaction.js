@@ -67,7 +67,7 @@ class EditTransaction extends PureComponent {
           errorText: 'Enter numericals'
         }
       });
-    } else if (!Number.isInteger(Number(e.target.value))){
+    } else if (e.target.value != parseInt(e.target.value, 10)){
       this.setState({
         purchaseVolumnInputError: {
           isError: true,
