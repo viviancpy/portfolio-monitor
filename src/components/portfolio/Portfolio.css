@@ -1,0 +1,49 @@
+.portfolio-main {
+  width: 100%;
+}
+
+.portfolio-table {
+  min-width: 600px;
+}
+
+.cell-icon-button{
+  width: 5%;
+}
+
+.cell-symbol{
+  width: 15%;
+}
+
+.cell-purchase-price{
+  width: 20%;
+}
+
+.cell-purchase-volumn{
+  width: 20%;
+}
+
+.cell-current-price{
+  width: 20%;
+}
+
+.cell-pnl{
+  width: 20%;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio-main {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .portfolio-table {
+    min-width: 320px;
+  }
+
+  /* all mui table related styling needs to be more specific class selector so as to take higher pref than mui class */
+  thead.portfolio-table-header {
+    display: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}

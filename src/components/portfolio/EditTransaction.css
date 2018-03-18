@@ -1,0 +1,39 @@
+.input-transaction{
+  width: 100%;
+}
+
+.button-image{
+  margin-left: 10px;
+}
+
+.reset-transaction{
+  float: right
+}
+
+.confirm-transaction{
+  float: left
+}
+
+@media screen and (max-width: 600px) {
+  .input-transaction{
+    width: 90%;
+  }
+
+  tr.edit-row {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  td.edit-cell {
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  .reset-transaction{
+    float: none;
+  }
+
+  .confirm-transaction{
+    float: none;
+  }
+}

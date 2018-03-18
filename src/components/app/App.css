@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #666666;
+  color: #FF7200;
+  text-align: left;
+}
+
+.App-title {
+  margin: 0;
+  padding: 10px;
+  align-content: center;
+}
+
+.App-title img {
+  height: 40px;
+}
+
+.App-title span {
+  padding-left: 5px;
+}
+
+.App-body{
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .App-title img {
+    display: none
+  }
+
+  .App-title span {
+    font-size: 20px;
+  }
+}

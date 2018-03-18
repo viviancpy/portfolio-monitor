@@ -1,0 +1,33 @@
+@media screen and (max-width: 600px) {
+  tr.transaction-row {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  td.transaction-cell {
+    flex-grow: 1;
+    text-align: left;
+  }
+  table td.action-button:before {
+    content: 'Transaction Details';
+  }
+  table td.symbol:before {
+    content: 'Symbol: ';
+  }
+  table td.purchase-volumn:before {
+    content: 'Shares held: ';
+  }
+  table td.purchase-price:before {
+    content: 'Purchase Price: $';
+  }
+  table td.market-price:before {
+    content: 'Latest Price: $';
+  }
+  table td.profit-and-loss:before {
+    content: 'PnL: ';
+  }
+  table td:last-child{
+    border-bottom: 1px solid;
+    border-bottom-color: #666;
+  }
+}
