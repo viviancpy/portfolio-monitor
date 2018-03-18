@@ -13,7 +13,8 @@ npm or yarn
 
 ### Installing
 
-Fork the repo or clone it to get source code. Then run npm start or yarn start to start the app locally.
+Fork the repo or clone it to get source code, run yarn install or npm install to pull node_modules.
+Then run npm start or yarn start to start the app locally.
 
 use yarn:
 ```
