@@ -23,7 +23,7 @@
     "typeface-roboto": "^0.0.54"
   },
   "engines": {
-    "node": ">=6.0"
+    "node": "7.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
