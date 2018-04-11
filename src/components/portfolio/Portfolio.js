@@ -46,7 +46,7 @@ class Portfolio extends Component {
               <TableCell className="cell-purchase-volumn" numeric>Shares Held</TableCell>
               <TableCell className="cell-purchase-price" numeric>Purchase Price</TableCell>
               <TableCell className="cell-current-price" numeric>Last Market Price</TableCell>
-              <TableCell className="cell-pnl" numeric>Profit/Loss</TableCell>
+              <TableCell className="cell-pnl" numeric>PnL</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
