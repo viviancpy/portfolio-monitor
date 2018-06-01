@@ -53,4 +53,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Built with initial packages from [create-react-app](https://github.com/facebook/create-react-app)
 * Solution design inspiration from [Redux](https://github.com/reactjs/redux) and Redux-saga(https://github.com/redux-saga/redux-saga)
 * UI inspiration from [Material-UI](https://material-ui-next.com/)
-* Requirements inspiration from [SpaceShip AU](https://www.spaceship.com.au)
+
