@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Portfolio from '../components/portfolio/Portfolio';
 import * as Actions from '../actions';
-import portfolioWithQuoteSelector from '../selectors/portfolioWithQuoteSelector'
+import { portfolioWithQuoteSelector } from '../selectors/portfolioWithQuoteSelector'
 
 
 export class PortfolioContainer extends Component {
