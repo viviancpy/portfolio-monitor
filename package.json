@@ -18,6 +18,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "axios-mock-adapter": "^1.15.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "expect": "^23.0.0-alpha.0",
     "jest": "^20.0.4",
     "material-ui": "next",
@@ -30,7 +32,9 @@
     "react-router-redux": "^4.0.8",
     "react-saga": "^0.2.6",
     "redux-devtools-extension": "^2.13.2",
+    "redux-mock-store": "^1.5.3",
     "redux-saga": "^0.16.0",
+    "redux-saga-test-plan": "^3.7.0",
     "reselect": "^3.0.1",
     "typeface-roboto": "^0.0.54"
   },

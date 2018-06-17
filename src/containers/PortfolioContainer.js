@@ -1,25 +1,25 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Portfolio from '../components/portfolio/Portfolio';
-import * as Actions from '../actions';
+import { addTransaction, removeTransaction } from '../actions';
 import { portfolioWithQuoteSelector } from '../selectors/portfolioWithQuoteSelector'
 
 
 export class PortfolioContainer extends Component {
   static propTypes = {
     transactions: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired
+    onAddTransaction: PropTypes.func.isRequired,
+    onRemoveTransaction: PropTypes.func.isRequired
   }
 
   render(){
-    const {actions, transactions} = this.props;
+    const {onAddTransaction, onRemoveTransaction, transactions} = this.props;
     return (
       <Portfolio
         transactions={transactions}
-        onAddTransaction={actions.addTransaction}
-        onRemoveTransaction={actions.removeTransaction}
+        onAddTransaction={onAddTransaction}
+        onRemoveTransaction={onRemoveTransaction}
       />
     )
   }
@@ -30,7 +30,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(Actions, dispatch)
+  onAddTransaction: (tx) => dispatch(addTransaction(tx)),
+  onRemoveTransaction: (tx) => dispatch(removeTransaction(tx)),
 })
 
 export default connect(
