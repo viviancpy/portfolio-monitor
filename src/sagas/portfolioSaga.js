@@ -13,7 +13,7 @@ export const removeTransaction = function* removeTransaction(action) {
   yield put({ type: Types.PORTFOLIO_REMOVE_TRANSACTION , transactionId: action.transactionId });
 }
 
-export const protfolioSaga = function* protfolioSaga() {
+export const portfolioSaga = function* portfolioSaga() {
   yield [
      takeEvery(Types.UI_ADD_TRANSACTION, addTransaction),
      takeEvery(Types.UI_REMOVE_TRANSACTION, removeTransaction)
