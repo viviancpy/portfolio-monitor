@@ -6,7 +6,7 @@ const getTransactions = (state, props) =>
 const getQuotes = (state, props) =>
   state.quote.quotes
 
-export const portfolioWithQuoteSelector = createSelector(
+const portfolioWithQuoteSelector = createSelector(
   [getTransactions, getQuotes],
   (transactions, quotes) => {
     return transactions.map(tx => {
@@ -23,3 +23,4 @@ export const portfolioWithQuoteSelector = createSelector(
   }
 )
 
+export default portfolioWithQuoteSelector;

@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "^1.1.4",
-    "react-test-renderer": "^16.4.1"
+    "react-scripts": "1.1.1"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "axios-mock-adapter": "^1.15.0",
     "expect": "^23.0.0-alpha.0",
     "jest": "^20.0.4",
     "material-ui": "next",
@@ -31,9 +29,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "debug-test": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "description": "A site to keep track of performance of a list of stock",
   "main": "index.js",
