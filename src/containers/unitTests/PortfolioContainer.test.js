@@ -47,4 +47,66 @@ describe('PortfolioContainer', () => {
     wrapper.props().onAddTransaction();
     expect(store.dispatch).toHaveBeenCalledWith(fakeAddTransaction);
   });
+
+  describe('componentWillReceiveProps', ()=>{
+    const fakeTxSmallPositive = {
+      symbol: 'IBM',
+      marketPrice: 100,
+      profitAndLoss: 200
+    };
+
+    const fakeTxSmallNegative = {
+      symbol: 'IBM',
+      marketPrice: 100,
+      profitAndLoss: -200
+    }
+
+    const fakeTxLargePositive = {
+      symbol: 'IBM',
+      marketPrice: 100,
+      profitAndLoss: 2000
+    };
+
+    const fakeTxLargeNegative = {
+      symbol: 'IBM',
+      marketPrice: 100,
+      profitAndLoss: -2000
+    }
+
+    const cases = [{
+      caseName: 'should set totalPnLAlert state to true if combine two transactions having loss over threshold',
+      fakeTransactions: [fakeTxLargeNegative, fakeTxSmallPositive],
+      expectedTotalPnLAlert: true
+    }, {
+      caseName: 'should set totalPnLAlert state to true if only have negative transactions',
+      fakeTransactions: [fakeTxLargeNegative, fakeTxSmallNegative],
+      expectedTotalPnLAlert: true
+    }, {
+      caseName: 'should set totalPnLAlert state to false if only have positive transactions',
+      fakeTransactions: [fakeTxSmallPositive, fakeTxLargePositive],
+      expectedTotalPnLAlert: false
+    }, {
+      caseName: 'should set totalPnLAlert state to false if combine two transactions having loss below threshold',
+      fakeTransactions: [fakeTxSmallNegative, fakeTxLargePositive],
+      expectedTotalPnLAlert: false
+    }]
+
+    cases.forEach(c => {
+      it(c.caseName, () => {
+
+        const wrapper = document.createElement('div');
+        let component = ReactDOM.render(<PortfolioContainerComponent transactions={[]} 
+          onAddTransaction={()=>{}} onRemoveTransaction={()=>{}} />, wrapper);
+        
+        expect(component.state.totalPnLAlert).toEqual(false);
+  
+        ReactDOM.render(<PortfolioContainerComponent transactions={c.fakeTransactions} 
+          onAddTransaction={()=>{}} onRemoveTransaction={()=>{}} />, wrapper);
+
+        expect(component.state.totalPnLAlert).toEqual(c.expectedTotalPnLAlert);
+      });
+
+    })
+
+  });
 });

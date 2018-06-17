@@ -13,6 +13,19 @@ export class PortfolioContainer extends Component {
     onRemoveTransaction: PropTypes.func.isRequired
   }
 
+  // this is just for example of unit test of lifecycle method
+  state = {
+    totalPnLAlert: false
+  }
+
+  componentWillReceiveProps(nextProps){
+      const newPnL = nextProps.transactions.reduce((accumulated, tx) => {
+        return accumulated + tx.profitAndLoss
+      }, 0);
+      
+      this.setState({totalPnLAlert: newPnL<-1000});
+  }
+
   render(){
     const {onAddTransaction, onRemoveTransaction, transactions} = this.props;
     return (
