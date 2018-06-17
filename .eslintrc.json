@@ -1,8 +1,21 @@
 {
-    "extends": "airbnb",
+    "extends": [
+        "standard",
+        "plugin:jest/recommended"
+    ],
     "plugins": [
-        "react",
-        "jsx-a11y",
-        "import"
-    ]
+        "standard",
+        "promise",
+        "jest"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
+        "linebreak-style": 0,
+        "global-require": 0
+      }
 }
